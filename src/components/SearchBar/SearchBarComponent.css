@@ -1,0 +1,14 @@
+
+.search-field {
+    width: 0%;
+    border: none;  
+}
+
+.search-field--visible {
+    width: 100%;
+    border: 1px solid black;  
+}
+.search-icon:hover {
+    cursor: pointer;
+}
+

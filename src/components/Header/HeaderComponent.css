@@ -1,0 +1,27 @@
+.header {
+    position:sticky;
+    top: 0;
+    z-index: 100;
+    transition: all 1s ease;
+    padding: 30px 0px;
+    
+}
+.header--hidden {
+    transform: translateY(-100%);
+    transition: all 1s ease;
+}
+.header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__list {
+    display: flex;
+}
+.nav__item:not(:first-child) {
+    margin-left: 33px;
+}
+.user-content {
+    display: flex;
+    align-items: center;
+}

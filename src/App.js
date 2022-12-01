@@ -1,24 +1,25 @@
-import logos from './logo.svg';
-import './App.css';
+import React from "react";
+import { Helmet } from "react-helmet";
+import icon from './assets/Icon.ico'
+import "./App.css";
+import "./ResetComponent.css";
+import HeaderComponent from "./components/Header/HeaderComponent";
+import LayoutComponent from "./components/Layouts/LayoutComponent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logos} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>California</title>
+        <link id="favicon" rel="icon" href={icon} type="image/x-icon"/>
+        {/* <link rel='icon' href={icon}/> */}
+      </Helmet>
+
+      <LayoutComponent>
+      </LayoutComponent>
+      
+    </>
   );
 }
 
