@@ -1,6 +1,5 @@
 import React from "react";
 import "./SearchBarComponent.css";
-import SearchBar from "../../assets/searchbar-icon.svg";
 
 
 class SearchBarComponent extends React.Component {
@@ -23,7 +22,7 @@ class SearchBarComponent extends React.Component {
           placeholder={placeholder}
           onChange={(e) => this.setState({searchField: e.target.value})}
         />
-        <img id="search-bar-icon" className="search-icon" src={SearchBar} alt="search bar"/>
+
       </>
     );
   }

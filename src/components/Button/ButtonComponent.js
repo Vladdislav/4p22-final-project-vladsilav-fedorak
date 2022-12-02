@@ -1,6 +1,6 @@
 import './ButtonComponent.css';
 
-function ButtonComponent(name, id , type, className, value) {
+function ButtonComponent({name, id , type, className, value, children}) {
     return(
         <>
         <button 
@@ -9,7 +9,7 @@ function ButtonComponent(name, id , type, className, value) {
         type={type}
         className={className}
         value={value}
-        ></button>
+        >{children}</button>
         </>
     )
 }

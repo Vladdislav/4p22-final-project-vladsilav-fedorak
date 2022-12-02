@@ -1,0 +1,26 @@
+.product {
+  margin: 0 auto;
+}
+.product__content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.product__title {
+  margin-top: 72px;
+  font-size: 42px;
+  line-height: 52px;
+}
+.product__description {
+  margin-top: 9px;
+  font-size: 13px;
+  line-height: 17px;
+}
+.product__list {
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: 20px;
+  width: inherit;
+  margin-top: 31px;
+}

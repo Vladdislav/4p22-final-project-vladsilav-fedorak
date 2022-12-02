@@ -1,4 +1,20 @@
-.button {
-    padding: 14px 53px;
-    
+.btn {
+  padding: 14px 46px;
+  border: 1px solid black;
+  border-radius: 200px;
+  background-color: transparent;
+  width: 170px;
+  height: 50px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: black;
+  transition: all .3s ease-in-out;
+}
+.btn:hover {
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+  background-color: rgb(220, 229, 226, 0.4);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
 }
