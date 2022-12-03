@@ -39,34 +39,6 @@
   display: flex;
   align-items: center;
 }
-.category {
-  padding: 0 30px;
-  position: absolute;
-  z-index: 5;
-  top: 20px;
-  left: -60px;
-  display: none;
-
-
-  width: max-content;
-  height: max-content;
-  align-items: flex-start;
-
-  background-color: #dce5e2;
-  transition: all 0.3s ease-in-out;
-}
-.category__item {
-  margin-top: 15px;
-  display: block;
-  font-size: 14px;
-  line-height: 17px;
-  font-weight: 600;
-  text-align: center;
-}
-#category {
-  position: relative;
-}
-#category:hover .category {
-  display: block;
-  transition: all 0.3s ease-in-out;
+.cart {
+  margin-left: 13px;
 }

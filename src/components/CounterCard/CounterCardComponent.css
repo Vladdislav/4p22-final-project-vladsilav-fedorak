@@ -1,0 +1,22 @@
+.card-counter {
+   
+  height: 44px;
+  max-width: 100px;
+  margin: 0 20px;
+  padding: 0 20px;
+  background: #e6e7e9;
+  border: none;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+  text-align: center;
+  font-size: 16px;
+}
+.card-counter:focus{
+
+    outline:none
+}
+.btn-decrement, .btn-increment {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+}

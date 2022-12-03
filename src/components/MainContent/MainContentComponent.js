@@ -1,4 +1,5 @@
 import ButtonComponent from "../Button/ButtonComponent";
+import CategoryComponent from "../Category/CategoryComponent";
 import "./MainContentComponent.css";
 
 function MainContentComponent() {

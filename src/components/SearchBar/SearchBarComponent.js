@@ -1,18 +1,7 @@
-import React from "react";
 import "./SearchBarComponent.css";
 
-
-class SearchBarComponent extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      searchField: "",
-    };
-  }
-  render() {
-    const {name, id, type, placeholder} = this.props;
+function SearchBarComponent({name, id, type, placeholder, onChange = () =>{}}){
     return (
-      
       <>
         <input
           className="search-field"
@@ -20,12 +9,11 @@ class SearchBarComponent extends React.Component {
           id={id}
           type={type}
           placeholder={placeholder}
-          onChange={(e) => this.setState({searchField: e.target.value})}
+          onChange={onChange}
         />
 
       </>
     );
   }
-}
 
 export default SearchBarComponent;

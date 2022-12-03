@@ -1,16 +1,24 @@
-import './ButtonComponent.css';
+import "./ButtonComponent.css";
+import React from "react";
 
-function ButtonComponent({name, id , type, className, value, children}) {
-    return(
-        <>
-        <button 
+function ButtonComponent({name, id, type, className, value, children, onClick = () => {} }) {
+
+  const OnClickEvent =(event) => {
+    onClick(event)
+  }
+  return (
+    <>
+      <button
         name={name}
         id={id}
         type={type}
         className={className}
         value={value}
-        >{children}</button>
-        </>
-    )
+        onClick={OnClickEvent}
+      >
+        {children}
+      </button>
+    </>
+  );
 }
 export default ButtonComponent;
