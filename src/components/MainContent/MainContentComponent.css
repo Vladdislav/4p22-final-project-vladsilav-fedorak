@@ -29,3 +29,14 @@
 .btn-more {
   margin-top: 30px;
 }
+@media screen and (max-width:768px){
+  .main__content-title{
+    font-size: 32px;
+    line-height: 36px;
+  }
+  .main-content__wrapper{
+    text-align: center;
+    padding-left:15px;
+    padding-right: 15px;
+  }
+}

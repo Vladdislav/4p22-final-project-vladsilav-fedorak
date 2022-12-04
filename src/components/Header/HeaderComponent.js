@@ -2,8 +2,22 @@ import "./HeaderComponent.css";
 
 import CartIcon from "../../assets/cart-icon.svg";
 import LogoComponent from "../Logo/LogoComponent";
+import icon from "../../assets/Icon.ico";
+import "../../ResetComponent.css";
+import { Link } from "react-router-dom";
 
 function HeaderComponent({ children }) {
+  const burger = document.getElementById('burger')
+  const navList = document.getElementById('nav-list')
+  const clickBurger = ((e)=> {
+      if (burger.classList.toggle('burger--click')){
+        navList.style.display = 'block';
+        
+      }
+      else {
+        navList.style.display = 'none';
+      }
+  })
   return (
     <>
       <header className="header">
@@ -13,27 +27,36 @@ function HeaderComponent({ children }) {
               <LogoComponent />
             </div>
             <nav className="nav">
-              <ul className="nav__list">
+              <ul id="nav-list" className="nav__list">
                 <li className="nav__item">
-                  <a className="nav__link" href="">
-                    ALL PRODUCTS
-                  </a>
+                  <Link to={"/"} className="nav__link" href="">
+                    Main
+                  </Link>
                 </li>
 
                 <li className="nav__item">
-                  <a className="nav__link">ABOUT</a>
+                  <Link to={"about"} className="nav__link">
+                    about
+                  </Link>
                 </li>
                 <li className="nav__item">
-                  <a className="nav__link">SUPPORT</a>
+                  <Link to={"feedback"} className="nav__link">
+                    feedback
+                  </Link>
                 </li>
+              </ul>
+              <ul id="burger" onClick={clickBurger} className="burger">
+                <li className="burger__line"></li>
+                <li className="burger__line"></li>
+                <li className="burger__line"></li>
               </ul>
             </nav>
 
             <div className="user-content">
               {children}
-              <a className="cart" href="">
+              <Link to={"cart"} className="cart" href="">
                 <img src={CartIcon} alt="Cart" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,5 +1,4 @@
 import "./CategoryComponent.css";
-import PropTypes from 'prop-types'
 function CategoryComponent() {
 
 

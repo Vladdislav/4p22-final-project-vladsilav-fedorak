@@ -3,15 +3,19 @@ import "./CounterCardComponent.css";
 import ButtonComponent from "../Button/ButtonComponent";
 import { useState } from "react";
 
-function CounterCardComponent() {
+function CounterCardComponent({idCard}) {
+
+
   let [counter, setCounter] = useState(0);
 
+  localStorage.setItem(`${idCard}`, `${counter}`)
+  let storageCounter = parseInt(localStorage.getItem(`${idCard}`));
   const incrementCounter = () => {
     
     setCounter((counter += 1));
   };
   const decrementCounter = () => {
-    if(counter === 0){
+    if(counter <= 0 ){
       return setCounter(counter = 0)
     }
     setCounter((counter -= 1));
@@ -34,7 +38,7 @@ function CounterCardComponent() {
         name="card-counter"
         id="card-counter"
         type="text"
-        value={counter}
+        value={storageCounter}
       />
       <ButtonComponent
         className="btn btn-increment"

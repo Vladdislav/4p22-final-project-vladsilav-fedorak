@@ -1,20 +1,14 @@
-import './IndexPage.css'
-import FooterComponent from "../../components/Footer/FooterComponent";
-import HeaderComponent from "../../components/Header/HeaderComponent";
-import SearchBarComponent from "../../components/SearchBar/SearchBarComponent";
-import DefaultLayout from "../../components/Layouts/DefaultLayout/DefaultLayout";
+import "./IndexPage.css";
 import MainContentComponent from "../../components/MainContent/MainContentComponent";
 import CardLayout from "../../components/Layouts/LayoutCard/CardLayout";
 import CardComponent from "../../components/Card/CardComponent";
-import icon from "../../assets/Icon.ico";
-import "../../ResetComponent.css";
 import { useEffect, useState } from "react";
-import { Helmet } from "react-helmet";
 
 function IndexPage() {
-
+  
   const [products, setProducts] = useState([]);
-  const [inputValue, setInputValue] = useState();
+  const [inputValue, setInputValue] = useState("");
+  const [filterProduct, setFilterProduct] = useState([]);
 
   useEffect(() => {
     fetch("http://fakestoreapi.com/products")
@@ -23,31 +17,28 @@ function IndexPage() {
         setProducts(result);
       });
   }, []);
+
+  // filter poructs from input
+  useEffect(() => {
+    let filteredProduct = [];
+    filteredProduct = products.filter((item) =>
+      item.title.toLowerCase().includes(inputValue.toLowerCase())
+    );
+    setFilterProduct(filteredProduct);
+  }, [inputValue, products]);
+
   return (
     <>
-    <Helmet>
-        <meta charSet="utf-8" />
-        <title>California</title>
-        <link id="favicon" rel="icon" href={icon} type="image/x-icon" />
-      </Helmet>
-      <HeaderComponent>
-        <SearchBarComponent
-          name="search-bar"
-          id="search-bar"
-          type="search"
-          placeholder="Enter a request"
-          onChange={(e) => setInputValue(e.target.value)}
-        />
-      </HeaderComponent>
 
-      <DefaultLayout>
+      
         <MainContentComponent />
         <CardLayout>
-          {products.map((item, index) => {
+          {filterProduct.map((item, index) => {
             return (
               <CardComponent
                 key={index}
                 img={item.image}
+                id={item.id}
                 nameProduct={item.title}
                 descProduct={item.description}
                 price={item.price}
@@ -56,8 +47,7 @@ function IndexPage() {
             );
           })}
         </CardLayout>
-      </DefaultLayout>
-      <FooterComponent />
+      
     </>
   );
 }

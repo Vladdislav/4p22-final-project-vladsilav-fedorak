@@ -1,0 +1,32 @@
+.product-id{
+    padding: 40px;
+    border: 2px solid black;
+    border-radius: 20px;
+    margin-top: 80px;
+    display: flex;
+    gap: 20px;
+}
+.product-id__image {
+    width: 50%;
+    padding-right: 20px;
+    border-right: 2px solid black;
+}
+.product-id__info{
+    padding-left: 20px;
+    width: 50%;
+}
+.product-id__title {
+
+}
+.product-id__desc {
+margin-top: 20px;
+}
+
+.product-id__btn-counter, .product-id__btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.product-id__btn{
+    margin: 20px 20px 0 20px;
+}

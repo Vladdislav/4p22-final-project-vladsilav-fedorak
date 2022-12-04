@@ -34,3 +34,16 @@ margin-left: 30px;
   display: block;
   transition: all 0.3s ease-in-out;
 }
+@media screen and (max-width: 1024px){
+  .category {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+
+  }
+  .category__item {
+  }
+  .category__item:not(:first-child) {
+    margin-left: 0;
+    }
+}
