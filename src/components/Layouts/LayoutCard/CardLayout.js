@@ -11,7 +11,9 @@ function LayoutCardComponent({ children }) {
         <div className="product__category">
         <CategoryComponent/>
         </div>
-        <div className="product__list">{children}</div>
+        <div className="product__list">
+          {children}
+        </div>
       </section>
     </>
   );

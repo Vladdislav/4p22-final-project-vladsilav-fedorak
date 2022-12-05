@@ -10,25 +10,14 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import icon from "../../../assets/Icon.ico";
 
-const DefaultLayout = () => {
-  const [products, setProducts] = useState([]);
-  const [inputValue, setInputValue] = useState("");
-  const [filterProduct, setFilterProduct] = useState([]);
-
-  useEffect(() => {
-    fetch("http://fakestoreapi.com/products")
-      .then((responce) => responce.json())
-      .then((result) => {
-        setProducts(result);
-      });
-  }, []);
-  useEffect(() => {
-    let filteredProduct = [];
-    filteredProduct = products.filter((item) =>
-      item.title.toLowerCase().includes(inputValue.toLowerCase())
-    );
-    setFilterProduct(filteredProduct);
-  }, [inputValue, products]);
+function DefaultLayout() {
+  const [inputValue, setInputValue] = useState('');
+ useEffect(()=>{
+  localStorage.setItem(`inputValue`,`${inputValue}`)
+ },[inputValue])
+    
+ 
+ 
   return (
     <>
       <Helmet>
@@ -43,9 +32,8 @@ const DefaultLayout = () => {
           id="search-bar"
           type="search"
           placeholder="Enter a request"
-          onChange={(e) => {
-            setInputValue(e.target.value);
-          }}
+          onChange={(e) => setInputValue(e.target.value)}
+          
         />
       </HeaderComponent>
 

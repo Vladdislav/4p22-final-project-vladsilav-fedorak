@@ -8,7 +8,6 @@ function CardComponent({
   nameProduct,
   descProduct,
   price,
-  onClick = () => {},
 }) {
   return (
     <>
@@ -18,7 +17,6 @@ function CardComponent({
             className="card__image"
             src={img}
             alt="ImageCard"
-            onClick={onClick}
           />
         </Link>
         <h3 className="card__title">{nameProduct}</h3>

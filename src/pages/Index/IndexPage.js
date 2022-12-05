@@ -7,11 +7,11 @@ import { useEffect, useState } from "react";
 function IndexPage() {
   
   const [products, setProducts] = useState([]);
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue , setInputValue] = useState([]);
   const [filterProduct, setFilterProduct] = useState([]);
-
+  
   useEffect(() => {
-    fetch("http://fakestoreapi.com/products")
+    fetch("https://fakestoreapi.com/products")
       .then((responce) => responce.json())
       .then((result) => {
         setProducts(result);
@@ -21,11 +21,12 @@ function IndexPage() {
   // filter poructs from input
   useEffect(() => {
     let filteredProduct = [];
+    setInputValue(localStorage.getItem('inputValue'));
     filteredProduct = products.filter((item) =>
-      item.title.toLowerCase().includes(inputValue.toLowerCase())
+      item.title.toLocaleLowerCase().includes(inputValue.toLowerCase())
     );
     setFilterProduct(filteredProduct);
-  }, [inputValue, products]);
+  }, [setInputValue, products, inputValue]);
 
   return (
     <>
@@ -42,7 +43,6 @@ function IndexPage() {
                 nameProduct={item.title}
                 descProduct={item.description}
                 price={item.price}
-                onClick={() => console.log(item.title)}
               />
             );
           })}
