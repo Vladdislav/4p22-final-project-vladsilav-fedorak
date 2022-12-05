@@ -4,9 +4,21 @@
   padding: 0px 73px;
 }
 
+@media screen and (max-width: 1440px){
+  .container {
+    max-width: 1440px;
+    padding: 0px 30px;
+  }
+}
+@media screen and (max-width: 768px){
+  .container {
+    max-width: 768px;
+    padding: 0px 20px;
+  }
+}
 @media screen and (max-width: 375px ){
   .container {
     margin-top: -15px;
-      padding: 0px 20px;
+      padding: 0px 15px;
   }
 }

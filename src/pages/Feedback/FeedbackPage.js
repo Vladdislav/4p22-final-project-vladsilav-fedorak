@@ -1,100 +1,115 @@
+import { useState } from "react";
 import ButtonComponent from "../../components/Button/ButtonComponent";
 import "./FeedbackPage.css";
 
 function FeedbackPage() {
-// let formReg = document.getElementById("form");
-// let namelInput = document.getElementById("name");
-// let emailInput = document.getElementById("email");
+  const [nameInputValue, setNameInputValue] = useState("");
+  const [emailInputValue, setEmailInputValue] = useState("");
+  const [ariaInputValue, setAriaInputValue] = useState("");
+  const [agreementCheckBoxInputValue, setAgreementCheckBoxInputValue] =
+    useState(false);
 
+  function validateEmail(email) {
+    const re =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+  function addRedStylesError(placeholder, span) {
+    placeholder.style.border = "2px solid red";
+    span.style.color = "red";
+  }
+  function addBaseStyle(placeholder, displayForSpan) {
+    placeholder.style.border = "2px solid #787878";
+    displayForSpan.style.display = "none";
+  }
 
-// let namelError = document.querySelector(".feedback__title-name");
-// let emailError = document.querySelector(".registration__email-error");
+  const submitForm = (event) => {
+    event.preventDefault();
+    let nameInput = setNameInputValue(document.getElementById("name"));
+    let emailInput = setEmailInputValue(document.getElementById("email"));
+    let ariaInput = setAriaInputValue(document.getElementById("aria"));
+    let agreementCheckBox = setAgreementCheckBoxInputValue(
+      document.getElementById("agreement")
+    );
 
-// function validateEmail(email) {
-//   const re =
-//     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//   return re.test(String(email).toLowerCase());
-// }
-// function addRedStylesError(placeholder, span) {
-//   placeholder.style.border = "2px solid red";
-//   span.style.color = "red";
-// }
-// function addBaseStyle(placeholder, displayForSpan) {
-//   placeholder.style.border = "2px solid #787878";
-//   displayForSpan.style.display = "none";
-// }
+    let formInput = {
+      nameInputValue: nameInput.value,
+      emailInputValue: emailInput.value,
+      ariaInputValue: ariaInput.value,
+      agreementCheckBoxInputValue: agreementCheckBox.value,
+    };
+    
 
-// formReg.addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   genderInput.forEach((item) => {
-//     if (item.checked) {
-//       genderInput = item.value;
-//     }
-//   });
-//   nameInput.value?.trim();
-//   emailInput.value?.trim();
-//   passwordError.value?.trim();
+    let nameError = document.querySelector(".feedback__title-name");
+    let emailError = document.querySelector(".feedback__email-error");
+    let ariaError = document.querySelector(".feedback__aria-error");
+    let agreementCheckBoxError = document.querySelector(
+      ".feedback__title-agreement"
+    );
 
-//   if (emailInput.value === "") {
-//     emailError.style.display = "inline";
-//     emailError.innerHTML = "Поле обязательно для заполнения";
-//     addRedStylesError(emailInput, emailError);
-//   } else if (!validateEmail(emailInput.value)) {
-//     emailError.style.display = "inline";
-//     emailError.innerHTML = "Email введён некорректно";
-//     addRedStylesError(emailInput, emailError);
-//   } else {
-//     addBaseStyle(emailInput, emailError);
-//   }
+    // nameInput.value?.trim();
+    // emailInput.value?.trim();
+    // ariaInput.value?.trim();
 
-//   if (passwordInput.value === "") {
-//     passwordError.style.display = "inline";
-//     passwordError.innerHTML = "Поле обязательно для заполнения";
-//     addRedStylesError(passwordInput, passwordError);
-//   }
+    if (formInput.nameInputValue === "") {
+      nameError.style.display = "inline";
+      nameError.innerHTML = "Поле обязательно для заполнения";
+      addRedStylesError(nameInputValue, nameError);
+    } else {
+      addBaseStyle(nameInputValue, nameError);
+    }
 
-//   else {
-//     addBaseStyle(passwordInput, passwordError);
-//   }
-//   if (confirmPasswordInput.value === "") {
-//     passwordConfirmError.style.display = "inline";
-//     passwordConfirmError.innerHTML = "Поле обязательно для заполнения";
-//     addRedStylesError(confirmPasswordInput, passwordConfirmError);
-//   } else if (
-//     passwordInput.value === confirmPasswordInput.value &&
-//     passwordInput.value.length >= 7
-//   ) {
-//     addBaseStyle(passwordInput, passwordError);
-//     addBaseStyle(confirmPasswordInput, passwordConfirmError);
-//     passwordError.style.color = "#787878";
-//     passwordConfirmError.style.color = "#787878";
-//   } else {
-//     passwordConfirmError.style.display = "inline";
-//     passwordConfirmError.innerHTML = "Пароли не совпадают";
-//     addRedStylesError(confirmPasswordInput, passwordConfirmError);
-//   }
+    // if (emailInputValue === "") {
+    //   emailError.style.display = "inline";
+    //   emailError.innerHTML = "Поле обязательно для заполнения";
+    //   addRedStylesError(emailInputValue, emailError);
+    // } else if (!validateEmail(emailInputValue)) {
+    //   emailError.style.display = "inline";
+    //   emailError.innerHTML = "Email введён некорректно";
+    //   addRedStylesError(emailInputValue, emailError);
+    // } else {
+    //   addBaseStyle(emailInputValue, emailError);
+    // }
 
-//   if (
-//     emailInput.value !== "" &&
-//     nameInput.value !== "" &&
-//     emailError.style.display === "none" &&
-//     passwordError.style.display === "none" &&
-//     passwordConfirmError.style.display === "none"
-//   ) {
-//     console.log("email: " + emailInput.value);
-//     console.log("name: " + nameInput.value);
-//   }
-// });
+    // if (ariaInputValue.value === "") {
+    //   ariaError.style.display = "inline";
+    //   ariaError.innerHTML = "Поле обязательно для заполнения";
+    //   addRedStylesError(ariaInputValue, ariaError);
+    // } else {
+    //   addBaseStyle(ariaInputValue, ariaError);
+    // }
+    // if (agreementCheckBoxInputValue.value !== true) {
+    //   agreementCheckBoxError.style.color = "red";
+    // } else {
+    //   agreementCheckBoxError.style.color = "#787878";
+    // }
+    // if (
+    //   emailError.style.display === "none" &&
+    //   nameError.style.display === "none" &&
+    //   ariaError.style.display === "none"
+    // ) {
+    //   formInput.forEach((item) => {
+    //     if (item.value !== "") {
+    //       console.log(item.value);
+    //     }
+    //   });
+    // }
+  };
   return (
     <>
       <div className="feedback">
-        <form id="form" action="" className="feedback__form">
+        <form
+          id="form"
+          action=""
+          className="feedback__form"
+          onSubmit={submitForm}
+        >
           <legend className="feedback__title">Обратная связь</legend>
           <div className="feedback__title-block">
             <label htmlFor="name" className="feedback__title-name">
               Имя
             </label>
-            <span className="feedback__email-error"></span>
+            <span className="feedback__тфьу-error"></span>
           </div>
           <input
             id="name"
@@ -112,13 +127,15 @@ function FeedbackPage() {
             placeholder="Введите Email"
             className="feedback__field-email feedback__input"
           />
-
-          <label htmlFor="about-myself" className="feedback__title-about">
-            Оставьте отзыв
-          </label>
+          <div className="feedback__title-block">
+            <label htmlFor="about-myself" className="feedback__title-about">
+              Оставьте отзыв
+            </label>
+            <span className="feedback__aria-error"></span>
+          </div>
           <textarea
             name="about-myself"
-            id="about-myself"
+            id="aria"
             placeholder="Опишите, что вас заинтересовало. Нам важно ваше мнение."
             className="feedback__area-about"
           ></textarea>
@@ -137,12 +154,14 @@ function FeedbackPage() {
           </fieldset>
 
           <ButtonComponent
-            name='sumbit'
-            id={'111'}
+            name="sumbit"
+            id="sen"
             type="submit"
             className="btn btn-send"
             value="Отправить"
-          >Отправить</ButtonComponent>
+          >
+            Отправить
+          </ButtonComponent>
         </form>
       </div>
     </>
