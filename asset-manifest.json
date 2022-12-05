@@ -1,16 +1,19 @@
 {
   "files": {
-    "main.css": "/4p22-final-project-vladsilav-fedorak/static/css/main.073c9b0a.css",
-    "main.js": "/4p22-final-project-vladsilav-fedorak/static/js/main.f0013e1c.js",
+    "main.css": "/4p22-final-project-vladsilav-fedorak/static/css/main.aecc4355.css",
+    "main.js": "/4p22-final-project-vladsilav-fedorak/static/js/main.6a08b12c.js",
     "static/js/787.47b22786.chunk.js": "/4p22-final-project-vladsilav-fedorak/static/js/787.47b22786.chunk.js",
-    "static/media/logo.svg": "/4p22-final-project-vladsilav-fedorak/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/main-content.jpg": "/4p22-final-project-vladsilav-fedorak/static/media/main-content.1cc42df730340da02318.jpg",
+    "static/media/Icon.ico": "/4p22-final-project-vladsilav-fedorak/static/media/Icon.73d06cea037e2c1dd230.ico",
+    "static/media/logo.svg": "/4p22-final-project-vladsilav-fedorak/static/media/logo.376d8accbd5e8068022a6274aa91de8a.svg",
     "index.html": "/4p22-final-project-vladsilav-fedorak/index.html",
-    "main.073c9b0a.css.map": "/4p22-final-project-vladsilav-fedorak/static/css/main.073c9b0a.css.map",
-    "main.f0013e1c.js.map": "/4p22-final-project-vladsilav-fedorak/static/js/main.f0013e1c.js.map",
+    "static/media/cart-icon.svg": "/4p22-final-project-vladsilav-fedorak/static/media/cart-icon.970ae18c578601810ba02fd2f4456d0d.svg",
+    "main.aecc4355.css.map": "/4p22-final-project-vladsilav-fedorak/static/css/main.aecc4355.css.map",
+    "main.6a08b12c.js.map": "/4p22-final-project-vladsilav-fedorak/static/js/main.6a08b12c.js.map",
     "787.47b22786.chunk.js.map": "/4p22-final-project-vladsilav-fedorak/static/js/787.47b22786.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.f0013e1c.js"
+    "static/css/main.aecc4355.css",
+    "static/js/main.6a08b12c.js"
   ]
 }
