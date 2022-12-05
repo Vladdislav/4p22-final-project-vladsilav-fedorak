@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/4p22-final-project-vladsilav-fedorak/static/css/main.aecc4355.css",
-    "main.js": "/4p22-final-project-vladsilav-fedorak/static/js/main.b3528254.js",
+    "main.js": "/4p22-final-project-vladsilav-fedorak/static/js/main.21624414.js",
     "static/js/787.47b22786.chunk.js": "/4p22-final-project-vladsilav-fedorak/static/js/787.47b22786.chunk.js",
     "static/media/main-content.jpg": "/4p22-final-project-vladsilav-fedorak/static/media/main-content.1cc42df730340da02318.jpg",
     "static/media/Icon.ico": "/4p22-final-project-vladsilav-fedorak/static/media/Icon.73d06cea037e2c1dd230.ico",
@@ -9,11 +9,11 @@
     "index.html": "/4p22-final-project-vladsilav-fedorak/index.html",
     "static/media/cart-icon.svg": "/4p22-final-project-vladsilav-fedorak/static/media/cart-icon.970ae18c578601810ba02fd2f4456d0d.svg",
     "main.aecc4355.css.map": "/4p22-final-project-vladsilav-fedorak/static/css/main.aecc4355.css.map",
-    "main.b3528254.js.map": "/4p22-final-project-vladsilav-fedorak/static/js/main.b3528254.js.map",
+    "main.21624414.js.map": "/4p22-final-project-vladsilav-fedorak/static/js/main.21624414.js.map",
     "787.47b22786.chunk.js.map": "/4p22-final-project-vladsilav-fedorak/static/js/787.47b22786.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.aecc4355.css",
-    "static/js/main.b3528254.js"
+    "static/js/main.21624414.js"
   ]
 }
