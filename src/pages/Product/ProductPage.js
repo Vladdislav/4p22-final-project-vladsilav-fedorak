@@ -11,7 +11,7 @@ function ProductPage() {
   useEffect(() => {
     (async () => {
       const responce = await fetch(
-        `http://fakestoreapi.com/products/${userId}`
+        `https://fakestoreapi.com/products/${userId}`
       );
       const result = await responce.json();
       setProduct(result);
