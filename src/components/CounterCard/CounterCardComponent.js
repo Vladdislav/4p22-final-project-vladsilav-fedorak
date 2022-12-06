@@ -1,34 +1,33 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./CounterCardComponent.css";
 import ButtonComponent from "../Button/ButtonComponent";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  decrement,
+  increment,
+  setIdCounter,
+} from "../../store/Counter/CounterSlise";
+import { createSubscription } from "react-redux/es/utils/Subscription";
 
-function CounterCardComponent({idCard}) {
-  let [counter, setCounter] = useState(0);
-  const [counterStorageValue, setCounterStorageValue] = useState(counter)
- 
-useEffect(()=> {
-  localStorage.setItem(`${idCard}`, `${counter}`)
-  let storageCounter = parseInt(localStorage.getItem(`${idCard}`));
-  setCounterStorageValue(storageCounter);
-},[counter])
- 
+function CounterCardComponent({ idCard }) {
+  let counter = useSelector((state) => state.counter.value);
+
+  const dispatch = useDispatch();
   const incrementCounter = () => {
-    
-    setCounter((counter += 1));
+    dispatch(increment());
   };
   const decrementCounter = () => {
-    if(counter <= 0 ){
-      return setCounter(counter = 0)
+    if (counter <= 0) {
+      return (counter = 0);
     }
-    setCounter((counter -= 1));
+    dispatch(decrement());
   };
   return (
     <>
       <ButtonComponent
         className="btn btn-decrement"
         name="decrement-card"
-        id="decrement-card"
+        id={`decrement-card`}
         type="button"
         value="decrement"
         onClick={decrementCounter}
@@ -41,12 +40,12 @@ useEffect(()=> {
         name="card-counter"
         id="card-counter"
         type="text"
-        value={counterStorageValue}
+        value={counter}
       />
       <ButtonComponent
         className="btn btn-increment"
         name="increment-card"
-        id="increment-card"
+        id={`increment-card`}
         type="button"
         value="increment"
         onClick={incrementCounter}

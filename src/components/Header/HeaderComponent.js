@@ -2,22 +2,20 @@ import "./HeaderComponent.css";
 
 import CartIcon from "../../assets/cart-icon.svg";
 import LogoComponent from "../Logo/LogoComponent";
-import icon from "../../assets/Icon.ico";
 import "../../ResetComponent.css";
 import { Link } from "react-router-dom";
+import SearchBarComponent from "../SearchBar/SearchBarComponent";
 
-function HeaderComponent({ children }) {
-  const burger = document.getElementById('burger')
-  const navList = document.getElementById('nav-list')
-  const clickBurger = ((e)=> {
-      if (burger.classList.toggle('burger--click')){
-        navList.style.display = 'block';
-        
-      }
-      else {
-        navList.style.display = 'none';
-      }
-  })
+function HeaderComponent() {
+  const burger = document.getElementById("burger");
+  const navList = document.getElementById("nav-list");
+  const clickBurger = (e) => {
+    if (burger.classList.toggle("burger--click")) {
+      navList.style.display = "block";
+    } else {
+      navList.style.display = "none";
+    }
+  };
   return (
     <>
       <header className="header">
@@ -53,7 +51,12 @@ function HeaderComponent({ children }) {
             </nav>
 
             <div className="user-content">
-              {children}
+              <SearchBarComponent
+                name="search-bar"
+                id="search-bar"
+                type="search"
+                placeholder="Enter a request"
+              />
               <Link to={"cart"} className="cart" href="">
                 <img src={CartIcon} alt="Cart" />
               </Link>

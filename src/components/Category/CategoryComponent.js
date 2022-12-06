@@ -1,34 +1,35 @@
 import "./CategoryComponent.css";
-function CategoryComponent() {
-
-
+function CategoryComponent({ OnClick = () => {} }) {
+  const OnClickEvent = (e) => {
+    OnClick(e);
+  };
   return (
     <>
       <ul className="category">
-      <li className="category__item">
-          <a id="all" className="category__link" href="">
-            ALL
-          </a>
+        <li className="category__item">
+          <p id="all" className="category__link" onClick={OnClickEvent}>
+            All
+          </p>
         </li>
         <li className="category__item">
-          <a id="jewelery" className="category__link" href="">
+          <p id="jewelery" className="category__link" onClick={OnClickEvent}>
             jewelery
-          </a>
+          </p>
         </li>
         <li className="category__item">
-          <a id="electronics" className="category__link" href="">
+          <p id="electronics" className="category__link" onClick={OnClickEvent}>
             electronics
-          </a>
+          </p>
         </li>
-        <li className="category__item">
-          <a id="women's clothing" className="category__link" href="">
+        <li className="category__item" >
+          <p id="women's clothing" className="category__link" onClick={OnClickEvent}>
             women's clothing
-          </a>
+          </p>
         </li>
-        <li className="category__item">
-          <a id="men's clothing" className="category__link" href="">
+        <li className="category__item" >
+          <p id="men's clothing" className="category__link" onClick={OnClickEvent}>
             men's clothing
-          </a>
+          </p>
         </li>
       </ul>
     </>

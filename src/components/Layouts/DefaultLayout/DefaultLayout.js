@@ -11,10 +11,6 @@ import { Helmet } from "react-helmet";
 import icon from "../../../assets/Icon.ico";
 
 function DefaultLayout() {
-  const [inputValue, setInputValue] = useState('');
- useEffect(()=>{
-  localStorage.setItem(`inputValue`,`${inputValue}`)
- },[inputValue])
     
  
  
@@ -26,16 +22,7 @@ function DefaultLayout() {
         <link id="favicon" rel="icon" href={icon} type="image/x-icon" />
       </Helmet>
 
-      <HeaderComponent>
-        <SearchBarComponent
-          name="search-bar"
-          id="search-bar"
-          type="search"
-          placeholder="Enter a request"
-          onChange={(e) => setInputValue(e.target.value)}
-          
-        />
-      </HeaderComponent>
+      <HeaderComponent/>
 
       <main className="main">
         <div className="container">

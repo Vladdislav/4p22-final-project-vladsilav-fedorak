@@ -1,17 +1,13 @@
+import { useDispatch, useSelector } from "react-redux";
+import { setInputValue } from "../../store/Input/InputSlice";
 import "./SearchBarComponent.css";
 
-function SearchBarComponent({name, id, type, placeholder, onChange = () =>{}}){
-  // const [inputValue, setInputValue] = useState("");
-  // const [filterProduct, setFilterProduct] = useState([]);
-  //     useEffect(() => {
-  //       let filteredProduct = [];
-  //       filteredProduct = products.filter((item) =>
-  //         item.title.toLowerCase().includes(inputValue.toLowerCase())
-  //       );
-  //       setFilterProduct(filteredProduct);
-  //     }, [inputValue, products]); 
-  return (
-      
+function SearchBarComponent({name, id, type, placeholder}){
+
+
+  const dispatch = useDispatch();
+
+  return (    
       <>
         <input
           className="search-field"
@@ -19,7 +15,7 @@ function SearchBarComponent({name, id, type, placeholder, onChange = () =>{}}){
           id={id}
           type={type}
           placeholder={placeholder}
-          onChange={onChange}
+          onChange={(e) => dispatch(setInputValue(e.target.value))}
         />
 
       </>
